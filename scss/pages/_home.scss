@@ -1,0 +1,64 @@
+body.home {
+	header {
+		background: none;
+		box-shadow: none;
+	}
+
+	h2 {
+		color: #ffffff;
+		@include fontsize(40);
+		font-weight: 300;
+	}
+
+	h3 {
+		color: #ffffff;
+		@include fontsize(22);
+		font-weight: 300;
+	}
+
+	.home-nav {
+		position: fixed;
+		right: $full-padding-h;
+		top: 50%;
+		transform: translateY(-50%);
+
+		&__button {
+			width: 6px;
+			height: 6px;
+			margin-bottom: 8px;
+			cursor: pointer;
+			border: 1px solid #ffffff;
+			border-radius: 3px;
+			left: 3px;
+
+			&:hover {
+				background: #ffffff;
+			}
+
+			&--active {
+				border: 1px solid #ffffff;
+				left: 0px;
+				width: 12px;
+				height: 12px;
+				border-radius: 6px;
+
+				&:hover {
+					background: none;
+					cursor: default;
+				}
+
+				&:after {
+					background: #ffffff;
+					content: " ";
+					width: 4px;
+					height: 4px;
+					border: 1px solid #ffffff;
+					border-radius: 3px;
+					position: absolute;
+					top: 2px;
+					left: 2px;
+				}
+			}
+		}
+	}
+}

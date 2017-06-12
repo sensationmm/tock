@@ -1,0 +1,11 @@
+@media screen and (max-width: $tablet-portrait) {
+
+	.body, .banner {
+		padding-left: $full-padding-h;
+		padding-right: $full-padding-h;
+	}
+	.homepage-block {
+		padding: $full-padding-v $full-padding-h;
+	}
+
+}

@@ -1,0 +1,397 @@
+
+
+.lightbox-overlay {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.7);
+	top: 0px;
+	left: 0px;
+	z-index: 1000;
+
+	-webkit-animation: lightboxOverlay 0.5s forwards;
+	-moz-animation: lightboxOverlay 0.5s forwards;
+	-ms-animation: lightboxOverlay 0.5s forwards;
+	-o-animation: lightboxOverlay 0.5s forwards;
+	animation: lightboxOverlay 0.5s forwards;
+
+	&--close {
+		-webkit-animation: lightboxOverlayClose 0.5s forwards;
+		-moz-animation: lightboxOverlayClose 0.5s forwards;
+		-ms-animation: lightboxOverlayClose 0.5s forwards;
+		-o-animation: lightboxOverlayClose 0.5s forwards;
+		animation: lightboxOverlayClose 0.5s forwards;
+	}
+}
+
+.lightbox {
+	max-width: $max+0px;
+	top: 10vh;
+	margin: auto;
+	height: 75vh;
+	z-index: 1001;
+	color: #ffffff;
+
+	&__header, &__close {
+		float: left;
+		padding: 0 2vh;
+		margin-bottom: 10px;
+		@include fontsize(22);
+		font-weight: 300;
+	}
+
+	&__close {
+		float: right;
+		cursor: pointer;
+	}
+
+	&__inner {
+		float: left;
+		width: 100%;
+		height: 71vh;
+		padding: 2vh 20px;
+		background: #ffffff center center no-repeat;
+		background-size: cover;
+		@include fontsize(12);
+		border-radius: 10px;
+
+		webkit-transition: all 0.5s ease;
+		-moz-transition: all 0.5s ease;
+		-o-transition: all 0.5s ease;
+		transition: all 0.5s ease;
+
+		&:before {
+			content: " ";
+			top: 0;
+			left: 0px;
+			position: absolute;
+			width: 100%;
+			height: 20%;
+			border-radius: 10px;
+
+			background: -webkit-linear-gradient(top, rgba(0,0,0,0.7), rgba(0,0,0,0)); 
+		    background: -o-linear-gradient(bottom, rgba(0,0,0,0.7), rgba(0,0,0,0)); 
+		    background: -moz-linear-gradient(bottom, rgba(0,0,0,0.7), rgba(0,0,0,0)); 
+		    background: linear-gradient(to bottom, rgba(0,0,0,0.7), rgba(0,0,0,0));
+		}
+
+		p {
+			position: absolute;
+			width: 50%;
+		}
+	}
+
+	p.lightbox__error {
+		position: relative;
+		color: $error;
+		width: 100%;
+		padding-top: 5px;
+		text-align: center;
+		margin-bottom: 0px;
+	}
+
+	&__notice {
+		position: absolute;
+		top: 30%;
+		right: 42%;
+		transform: translateY(-50%);
+		max-width: 200px;
+		border-radius: 10px;
+		border: 1px solid $primary;
+		background: #ffffff;
+		color: $text;
+		padding: 7px 10px;
+		@include fontsize(12);
+		opacity: 0;
+	}
+
+	&__items {
+		float: right;
+		width: 40%;
+		padding: 2% 0 0 0;
+		background: #ffffff;
+		border-radius: 10px;
+		color: $text;
+		text-align: center;
+		@include fontsize(14);
+		max-height: 90vh;
+		margin-top: 5%;
+		overflow: hidden;
+
+		&__items {
+			padding-top: 2vh;
+			border-top: 2px solid $primary;
+			border-bottom: 2px solid $primary;
+			margin: 2vh 6% 3vh 6%;
+			overflow-y: scroll;
+			height: 36vh;
+
+			webkit-transition: all 0.5s ease;
+			-moz-transition: all 0.5s ease;
+			-o-transition: all 0.5s ease;
+			transition: all 0.5s ease;
+		}
+	}
+
+	&__item {
+		padding-bottom: 20px;
+		overflow-y: hidden;
+		text-align: left;
+		@include fontsize(12);
+
+		webkit-transition: all 0.5s ease;
+		-moz-transition: all 0.5s ease;
+		-o-transition: all 0.5s ease;
+		transition: all 0.5s ease;
+
+		&__values {
+			border-radius: 10px;
+			background: #f6f6f6;
+			overflow: hidden;
+			margin-top: 10px;
+		}
+
+		&__value {
+			float: left;
+			width: 25%;
+			padding: 5px 2px;
+			border-radius: 20px;
+			text-align: center;
+			@include fontsize(10);
+			cursor: pointer;
+
+			webkit-transition: all 0.5s ease;
+			-moz-transition: all 0.5s ease;
+			-o-transition: all 0.5s ease;
+			transition: all 0.5s ease;
+
+			&.active {
+				color: #ffffff;
+				background: $primary;
+			}
+
+			&:nth-child(1) {
+				width: 20%;
+			}
+
+			&:nth-child(3) {
+				width: 30%;
+			}
+
+			&--additional {
+				width: 33% !important;
+			}
+		}
+
+		.high-value {
+			padding-top: 20px;
+			display: none;
+
+			input[type="text"], input[type="number"] {
+				float: left;
+				width: 50%;
+				display: block;
+				padding-bottom: 5px;
+				border-bottom: 1px solid $textOffset;
+				color: $textOffset;
+				@include fontsize(14);
+				font-weight: 400; 
+			}
+
+			button {
+				float: left;
+				width: 25%;
+				padding: 5px 2px;
+				border-radius: 20px;
+				text-align: center;
+				@include fontsize(10);
+				cursor: pointer;
+				color: #ffffff;
+				background: $primary;
+				border: 0;
+				outline: 0;
+				-webkit-appearance: none;
+				margin-left: 5%;
+			}
+
+			label {
+				float: left;
+				display: block;
+				text-transform: uppercase;
+				font-weight: 600;
+				margin-bottom: 10px;
+				width: 20%;
+				padding: 1.5% 0;
+			}
+
+			p {
+				width: 100%;
+				position: relative;
+				margin-bottom: 10px;
+			}
+
+			-webkit-animation: lightboxOverlay 1s forwards;
+			-moz-animation: lightboxOverlay 1s forwards;
+			-ms-animation: lightboxOverlay 1s forwards;
+			-o-animation: lightboxOverlay 1s forwards;
+			animation: lightboxOverlay 1s forwards;
+		}
+	}
+
+	&__accordion {
+		display: none;
+	}
+
+	&__accordion-trigger {
+		margin-bottom: 20px;
+		cursor: pointer;
+
+		strong {
+			padding-right: 30px;
+			background: right center no-repeat url(/images/icon-dropdown.png);
+		}
+
+		&.open {
+			strong {
+				background-image: url(/images/icon-dropup.png);
+			}
+		}
+	}
+
+	&__collection {
+		@include fontsize(12);
+		text-align: left;
+		padding: 20px 0;
+		border-top: 2px solid $primary;
+
+		.button--floatright {
+			float: none;
+			position: absolute;
+			top: 50%;
+			right: 0px;
+			transform: translateY(-50%);
+		}
+
+		.lightbox__item {
+			clear: both;
+			padding-top: 20px;
+			padding-bottom: 0px;
+		}
+	}
+
+	&__footer {
+		overflow: hidden;
+		text-align: left;
+	}
+
+	&__buttons {
+		text-align: center;
+
+		&__top {
+			height: 7vh;
+
+			.button {
+				@include fontsize(14);
+				padding: 10px 30px;
+				margin: 0 auto;
+				display: inline-block;
+			}
+		}
+	}
+
+	&__add-item {
+		display: none;
+
+		&__title, form.add-item {
+			margin: 0 6% 0vh 6%;
+			height: 7vh;
+		}
+
+		&__actions {
+			background: $primary;
+			overflow: hidden;
+
+			> div {
+				float: left;
+				color: #fff;
+				text-align: center;
+				width: 50%;
+				padding: 2% 20px;
+			    cursor: pointer;
+			    webkit-transition: all 0.5s ease;
+			    -webkit-transition: all 0.5s ease;
+			    transition: all 0.5s ease;
+			    border-top: 1px solid $primary;
+			    border-right: 1px solid #fff;
+
+			    &:nth-child(3n) {
+			    	border-right: none;
+			    }
+
+			    &:hover {
+			    	background: #ffffff;
+			    	color: $primary;
+			    }
+
+			    &.lightbox__add-item__cancel {
+			    	display: none;
+			    }
+
+			    &.flash {
+			    	background: $error;
+			    }
+
+			}
+		}
+	}
+
+	&__next {
+		display: block;
+		background: $primary;
+		color: #ffffff;
+		text-align: center;
+		padding: 2% 20px;
+		cursor: pointer;
+		webkit-transition: all 0.5s ease;
+		-moz-transition: all 0.5s ease;
+		-o-transition: all 0.5s ease;
+		transition: all 0.5s ease;
+		border-top: 1px solid $primary;
+
+		&:hover {
+			color: $primary;
+			background: #ffffff;
+		}
+	}
+
+	&__info {
+		position: absolute;
+		left: 68px;
+		bottom: 105px;
+		display: inline-block;
+		width: 45%;
+
+		&__icon {
+			background: $primary url(/images/icon-info.png) center center no-repeat;
+			width: 60px;
+			height: 60px;
+			border: 2px solid #ffffff;
+			border-radius: 30px;
+			top: 50%;
+			transform: translateX(-50%) translateY(-50%);
+			position: absolute;
+			z-index: 2;
+			cursor: pointer;
+		}
+
+		&__text {
+			width: 100%;
+			border-radius: 10px;
+			border: 1px solid $primary;
+			background: #ffffff;
+			color: $text;
+			padding: 20px 20px 20px 40px;
+			@include fontsize(12);
+		}
+	}
+}	

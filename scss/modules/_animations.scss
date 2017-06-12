@@ -1,0 +1,22 @@
+@-webkit-keyframes lightboxOverlay { 0% { display: none; opacity: 0; } 100% { display: block; opacity: 1; } }
+@-moz-keyframes lightboxOverlay { 0% { display: none; opacity: 0; } 100% { display: block; opacity: 1; } }
+@-ms-keyframes lightboxOverlay { 0% { display: none; opacity: 0; } 100% { display: block; opacity: 1; } }
+@-o-keyframes lightboxOverlay { 0% { display: none; opacity: 0; } 100% { display: block; opacity: 1; } }
+@keyframes lightboxOverlay { 0% { display: none; opacity: 0; } 100% { display: block; opacity: 1; } }
+@-webkit-keyframes lightboxOverlayClose { 0% { display: block; opacity: 1; } 100% { display: none; opacity: 0; } }
+@-moz-keyframes lightboxOverlayClose { 0% { display: block; opacity: 1; } 100% { display: none; opacity: 0; } }
+@-ms-keyframes lightboxOverlayClose { 0% { display: block; opacity: 1; } 100% { display: none; opacity: 0; } }
+@-o-keyframes lightboxOverlayClose { 0% { display: block; opacity: 1; } 100% { display: none; opacity: 0; } }
+@keyframes lightboxOverlayClose { 0% { display: block; opacity: 1; } 100% { display: none; opacity: 0; } }
+
+
+@-webkit-keyframes backgroundFadeOut { 0% { background-color: $primary; color: #ffffff; } 100% { background-color: none; color: $text; } }
+@-moz-keyframes backgroundFadeOut { 0% { background-color: $primary; color: #ffffff; } 100% { background-color: none; color: $text; } }
+@-ms-keyframes backgroundFadeOut { 0% { background-color: $primary; color: #ffffff; } 100% { background-color: none; color: $text; } }
+@-o-keyframes backgroundFadeOut { 0% { background-color: $primary; color: #ffffff; } 100% { background-color: none; color: $text; } }
+@keyframes backgroundFadeOut { 0% { background-color: $primary; color: #ffffff; } 100% { background-color: none; color: $text; } }
+@-webkit-keyframes backgroundFadeIn { 0% { color: $text; background-color: none; } 100% { background-color: $primary; color: #ffffff; } }
+@-moz-keyframes backgroundFadeIn { 0% { color: $text; background-color: none; } 100% { background-color: $primary; color: #ffffff; } }
+@-ms-keyframes backgroundFadeIn { 0% { color: $text; background-color: none; } 100% { background-color: $primary; color: #ffffff; } }
+@-o-keyframes backgroundFadeIn { 0% { color: $text; background-color: none; } 100% { background-color: $primary; color: #ffffff; } }
+@keyframes backgroundFadeIn { 0% { color: $text; background-color: none; } 100% { background-color: $primary; color: #ffffff; } }

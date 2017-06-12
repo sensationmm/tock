@@ -1,0 +1,152 @@
+body.yourbelongings {
+
+	.belongings-intro {
+		margin-bottom: 7%;
+	}
+
+	h3 {
+		margin-bottom: 2%;
+	}
+
+	.rooms, .additional-rooms {
+		width: 100%;
+		overflow: hidden;
+
+		&__room, &__reference {
+			float: left;
+			width: (4/12) * 96%;
+			margin: 0px 2% 20px 0px;
+			color: $textOffset;
+			cursor: pointer;
+
+			-webkit-animation: lightboxOverlay 0.5s forwards;
+			-moz-animation: lightboxOverlay 0.5s forwards;
+			-ms-animation: lightboxOverlay 0.5s forwards;
+			-o-animation: lightboxOverlay 0.5s forwards;
+			animation: lightboxOverlay 0.5s forwards;
+
+			&:nth-of-type(3n) {
+				margin-right: 0;
+			}
+
+			&:nth-of-type(3n+1) {
+				clear: both;
+			}
+		}
+
+		&__reference {
+			text-align: right;
+			color: $textBlack;
+			cursor: default;
+
+			.estimated-total {
+				@include fontsize(20);
+				margin-bottom: 10px;
+				font-weight: 300;
+
+				span { color: $primary; padding-left: 10px;}
+			}
+		}
+
+		&__image {
+			height: 0;
+			padding-bottom: 70%;
+			border-radius: 5px;
+			color: #ffffff;
+			margin-bottom: 10px;
+			background: $text url(/public/images/backgrounds/hp-cactus.jpg) center center no-repeat;
+			background-size: cover;
+
+			&:before {
+				content: " ";
+				background: $textBlack;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 100%;
+				height: 100%;
+				opacity: 0.3;
+				border-radius: 5px;
+
+				webkit-transition: all 0.5s ease;
+				-moz-transition: all 0.5s ease;
+				-o-transition: all 0.5s ease;
+				transition: all 0.5s ease;
+			}
+
+			&:hover {
+				&:before {
+					background: $primary;
+					opacity: 0.7;
+				}
+			}
+		}
+
+		&__title {
+			position: absolute;
+			text-align: center;
+			width: 100%;
+			margin-top: 35%;
+			@include fontsize(16);
+		}
+
+		&__total {
+			@include fontsize(14);
+
+			&__value {
+				color: $primary;
+				font-weight:600;
+				float: right;
+			}
+		}
+
+		&__reference {
+
+			&__inner {
+				// padding-left: 25%;
+			}
+
+			&-number {
+				font-weight: 300;
+				@include fontsize(22);
+				margin-bottom: 10px;
+			}
+		}
+
+		&__completed {
+			position: absolute;
+			width: 30px;
+			height: 30px;
+			right: 5px;
+			bottom: 5px;
+			background: url(/images/icon-done.png);
+		}
+	}
+
+	.quote-estimate {
+		@include fontsize(20);
+		font-weight: 300;
+
+		&__total {
+			float: right;
+			color: $primary;
+		}
+
+		&__items {
+			color: $textOffset;
+			@include fontsize(14);
+		}
+	}
+
+	.progress-buttons {
+		@include fontsize(12);
+		color: $primary;
+		font-weight: 400;
+
+		#progress-confirm {
+			display: none;
+		}
+	}
+
+
+}

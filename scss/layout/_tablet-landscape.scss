@@ -1,0 +1,45 @@
+@media screen and (max-width: $tablet-landscape) {
+
+	.body {
+		padding-top: $full-padding-h * 3;
+		padding-bottom: $full-padding-h;
+	}
+
+	body.home {
+		.home-nav {
+			right: auto;
+			bottom: 20px;
+			top: auto;
+			left: 50%;
+			transform: translateX(-50%);
+
+			&__button {
+				width: 12px;
+				height: 12px;
+				border-radius: 6px;
+				display: inline-block;
+				margin-bottom: 0px;
+				margin-right: 12px;
+				vertical-align: middle;
+
+				&:hover {
+					background: none;
+				}
+
+				&--active {
+					width: 18px;
+					height: 18px;
+					border-radius: 9px;
+					margin-right: 4px;
+
+					&:after {
+						width: 10px;
+						height: 10px;
+						border-radius: 6px;
+					}
+				}
+			}
+		}
+	}
+
+}

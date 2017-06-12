@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600');
+
+@import url('../../node_modules/swiper/dist/css/swiper.min.css');
+
+
+@import 'modules/_mixin';
+@import 'modules/_variables';
+@import 'modules/_colours';
+@import 'modules/_animations';
+
+@import 'base/_reset';
+@import 'base/_typography';
+@import 'base/_forms';
+
+@import 'layout/_core';
+
+@import 'pages/_home';
+@import 'pages/_page';
+@import 'pages/_yourproperty';
+@import 'pages/_yourdetails';
+@import 'pages/_yourbelongings';
+@import 'pages/_yourquote';
+@import 'pages/_lightbox';
+@import 'layout/_loader';
+
+@import 'layout/_tablet-landscape';
+@import 'layout/_tablet-portrait';
+@import 'layout/_mobile';
+

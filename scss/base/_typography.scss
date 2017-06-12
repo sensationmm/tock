@@ -1,0 +1,173 @@
+body {
+	font-family: 'Open Sans';
+	@include fontsize(14);
+	color: $text;
+	font-weight: 300;
+}
+
+h1 {
+	font-weight: 300;
+	@include fontsize(40);
+	color: #ffffff;
+}
+
+h2, h3 {
+	font-weight: 300;
+	@include fontsize(22);
+	color: $textBlack;
+}
+
+p {
+	&.small {
+		@include fontsize(12);
+	}
+}
+
+.highlight {
+	color: $primary;
+}
+
+.button {
+	border: 0px;
+	outline: 0;
+	background: none;
+	padding: 0;
+	@include fontsize(14);
+
+	a, &.submit {
+		text-decoration: none;
+		display: inline-block;
+		border-radius: 40px;
+		text-align: center;
+		padding: 10px 40px;
+		border: 1px solid $primary;
+		cursor: pointer;
+		background: $primary;
+		color: #ffffff;
+		webkit-transition: all 0.5s ease;
+		-moz-transition: all 0.5s ease;
+		-o-transition: all 0.5s ease;
+		transition: all 0.5s ease;
+
+		&.button--large {
+			@include fontsize(16);
+			padding: 8px 40px;
+			margin-right: 10%;
+			margin-top: 5%;
+		}
+
+		&:hover {
+			color: $primary;
+			background: #ffffff;
+		}
+	}
+
+	&.reverse {
+		text-decoration: none;
+		display: inline-block;
+		border-radius: 40px;
+		text-align: center;
+		padding: 5px 20px;
+		border: 1px solid $textOffset;
+		cursor: pointer;
+		background: $textOffset;
+		color: #ffffff;
+		webkit-transition: all 0.5s ease;
+		-moz-transition: all 0.5s ease;
+		-o-transition: all 0.5s ease;
+		transition: all 0.5s ease;
+
+		&:hover {
+			background: $primary;
+			border-color: $primary;
+		}
+	}
+
+	&--empty {
+		a, &.submit {
+			color: $primary;
+			background: none;
+
+			&:hover {
+				color: #ffffff;
+				background: $primary;
+			}
+		}
+	}
+
+	&--right {
+		position: absolute;
+		top: $full-padding-v;
+		right: $full-padding-h;
+	}
+
+	&--spaced {
+		margin-top: 30px;
+	}
+
+	&--small {
+		@include fontsize(10);
+		padding: 5px 20px;
+
+		a {
+			padding: 5px 20px;
+		}
+	}
+
+	&--contact {
+
+		&.submit, a {
+			padding: 5px 20px;
+		}
+	}
+
+	&--floatright {
+		float: right;
+	}
+
+	&.no-message {
+		span { display: none; }
+	}
+}
+
+.button-social {
+	background: $primary;
+	border: 1px solid $primary;
+	border-radius: 40px;
+	float: right;
+	@include fontsize(10);
+	margin-top: 5px;
+	overflow: hidden;
+	width: 26px;
+	height: 26px;
+	cursor: pointer;
+	text-align: center;
+
+	img {
+		width: 70%;
+		position: relative;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+}
+
+nav {
+	@include nolist;
+
+	ul {
+		white-space: nowrap;
+
+		li {
+			display: inline-block;
+			padding: 5px 0;
+			margin-right: 20px;
+
+			@include navlink();
+		}
+	}
+
+	&.header__nav {
+		font-weight: 300;
+		@include fontsize(14);
+	}
+}

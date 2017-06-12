@@ -1,0 +1,74 @@
+@media screen and (max-width: $mobile) {
+
+	header, .footer {
+		padding: ($full-padding-v/2) ($full-padding-h/2);
+	}
+
+	.body {
+		padding: $full-padding-v 20px;
+	}
+
+	body.page .body {
+		padding: $full-padding-v*2 20px $full-padding-v 20px;
+	}
+
+	.banner {
+		padding-left: 20px;
+		padding-right: 20px;
+		text-align: center;
+	}
+
+	.page-block {
+		padding: 10px 20px;
+	}
+
+
+	.button {
+		&--right {
+			top: $full-padding-v/2;
+			right: $full-padding-h/2;
+		}
+	}
+
+	.page-block {
+		text-align: center;
+
+		p {
+			br { display: none; }
+		}
+
+		&--alternate {
+			text-align: left;
+		}
+	}
+
+	.button {
+		padding: 5px;
+		background-size: 20px !important;
+		background: no-repeat center center;
+		width: 40px;
+		height: 40px;
+		text-indent: -1000px;
+		background-color: $primary;
+		background-image: url(/public/images/icon-mail-white.png);
+
+		&:hover {
+			background-image: $primary url(/public/images/icon-mail-white.png);
+		}
+
+		&--empty {
+			background-color: #ffffff;
+			background-image: url(/public/images/icon-mail-orange.png);
+
+			&:hover {
+				background-image: url(/public/images/icon-mail-orange.png);
+			}
+		}
+
+		&--right {
+			top: $full-padding-v / 4;
+			right: $full-padding-h / 4;
+		}
+	}
+
+}

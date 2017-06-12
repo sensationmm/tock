@@ -1,0 +1,268 @@
+
+body.lightboxed {
+	overflow: hidden;
+
+	header, footer, .body, .banner, .animated {
+		-webkit-filter: blur(3px);
+		filter: blur(3px);
+
+		webkit-transition: all 0.5s ease;
+		-moz-transition: all 0.5s ease;
+		-o-transition: all 0.5s ease;
+		transition: all 0.5s ease;
+	}
+}
+
+.body__inner, .banner__inner {
+	max-width: $max+0px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+header {
+	position: absolute;
+	width: 100%;
+	padding: $full-padding-v $full-padding-h;
+	z-index: 2;
+
+	.logo {
+		width: 52px;
+		margin: 0px auto;
+		padding-top: 3px;
+
+		img {
+			max-width: 100%;
+		}
+	}
+
+	nav {
+		position: absolute;
+	}
+}
+
+nav.header__nav {
+	ul {
+		li {
+			color: #ffffff;
+		}
+	}
+}
+
+.site-warning {
+	color: #ffffff;
+	background: $primary;
+	padding: 10px 20%;
+	display: none;
+	text-align: center;
+
+	&.animate {
+	    webkit-transition: all 0.5s ease;
+	    -webkit-transition: all 0.5s ease;
+	    transition: all 0.5s ease;
+	}
+
+	&.flash {
+		background: $error;
+	}
+}
+
+.banner {
+	height: 384px;
+	background: #000000 center center no-repeat;
+	background-size: cover;
+	padding: 180px 0px 150px 0px;
+
+	&:after {
+		content: " ";
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		width: 100%;
+		height: 100%;
+
+		background: -moz-linear-gradient(top,  rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 100%);
+		background: -webkit-linear-gradient(top,  rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 100%);
+		background: linear-gradient(to bottom,  rgba(0,0,0,0.3) 0%,rgba(0,0,0,0) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4d000000', endColorstr='#00000000',GradientType=0 );
+	}
+
+	.banner__inner {
+
+		.banner__breadcrumb {
+			position: absolute;
+			top: $full-padding-v * -1;
+			@include fontsize(10);
+			color: #ffffff;
+
+			ul {
+				li {
+					position: relative;
+
+					&:after {
+						content: "/";
+						position: absolute;
+						right: -12px;
+					}
+
+					&.active {
+						color: $primary;
+
+						&:after {
+							color: #ffffff;
+						}
+					}
+
+					&:last-of-type {
+						&:after {
+							display: none;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+body {
+	background: $backgroundOffset;
+}
+
+.body {
+	width: 100%;
+	box-shadow: 0px 0px 3px 0px #ddd;
+	background: $backgroundOffset;
+	padding-top: $full-padding-h;
+	padding-bottom: $full-padding-h * 2;
+
+	&--balanced {
+		padding-bottom: $full-padding-h;
+	}
+
+	&--white {
+		background: #ffffff;
+	}
+}
+
+.page-block {
+	width: 100%;
+	height: 100vh;
+	background: center center no-repeat;
+	background-size: cover;
+	color: #ffffff;
+	@include fontsize(16);
+
+	&--short {
+		height: 87vh;
+	}
+
+	&__inner {
+		max-width: $max+0px;
+		margin-left: auto;
+		margin-right: auto;
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	&--home {
+		text-align: center;
+	}
+
+	&--alternate {
+		text-align: right;
+	}
+
+	&:after {
+		content: " ";
+		position: absolute;
+		top: 0px;
+		left: 0px;
+		width: 100%;
+		height: 100%;
+
+		background: -moz-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.65) 100%); /* FF3.6-15 */
+		background: -webkit-radial-gradient(center, ellipse cover,  rgba(0,0,0,0.1) 0%,rgba(0,0,0,0.65) 100%); /* Chrome10-25,Safari5.1-6 */
+		background: radial-gradient(ellipse at center,  rgba(0,0,0,0.1) 0%,rgba(0,0,0,0.65) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	}
+
+	&__logo {
+		margin: 50px 15px 0 0;
+	}
+
+	p {
+		font-weight: 300;
+	}
+}
+
+.cols {
+	overflow: hidden;
+
+	.col-half {
+		float: left;
+		width: 45%;
+		margin-right: 10%;
+
+		&:nth-child(2n) {
+			margin-right: 0;
+		}
+	}
+}
+
+.contact-form__success, .contact-form__failure {
+	display: none;
+}
+
+.footer {
+	clear: both;
+	overflow: hidden;
+	padding: $full-padding-v $full-padding-h;
+
+	&__logo {
+		float: left;
+		width: 52px;
+		margin-right: 28px;
+
+		img {
+			max-width: 100%;
+		}
+	}
+
+	&__nav {
+		float: left;
+		@include fontsize(10, 2);
+
+		ul {
+			li {
+				color: $textOffset;
+			}
+		}
+	}
+}
+
+.ui-state-highlight {
+	background: #ffffff !important;
+	color: $text !important;
+	border-color: #c5c5c5 !important;
+}
+
+.ui-state-active {
+	color: #ffffff !important;
+	background: $primary !important;
+	border-color: $primary !important;
+}
+
+@media screen and (max-width: $tablet-landscape) {
+	header, .footer {
+		padding: ($full-padding-v/2) ($full-padding-h/2);
+
+		.button--right {
+			top: $full-padding-v/2;
+			right: $full-padding-h/2;
+		}
+	}
+
+	.body, .page-block {
+		padding: $full-padding-v 20px;
+	}
+}
+

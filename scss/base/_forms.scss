@@ -1,0 +1,153 @@
+form {
+	::-webkit-input-placeholder { text-transform: none; }
+	:-moz-placeholder { text-transform: none; }
+	::-moz-placeholder { text-transform: none; }
+	:-ms-input-placeholder { text-transform: none; }
+
+}
+
+input:-webkit-autofill {
+	background: none;
+	-webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+form.homepage-search {
+	input[type="text"] {
+		border-radius: 20px;
+		background: #ffffff;
+		text-align: center;
+		padding: 10px 20px;
+		text-transform: uppercase;
+		width: 280px;
+		display: inline-block;
+		margin-bottom: 10px;
+		font-weight: 300;
+		
+	}
+
+	button {
+		display: block;
+		width: 280px;
+		padding: 7px 20px;
+		margin: 0px auto;
+		font-weight: 300;
+
+		&.button {
+			display: block;
+			@include fontsize(16);
+		}
+	}
+
+	.error {
+		display: none;
+		width: 400px;
+		padding: 7px 20px;
+		margin: 0px auto;
+		font-weight: 300;
+
+		border-radius: 40px;
+		margin-top: 10px;
+	}
+}
+
+form.add-item {
+	input[type="text"], input[type="number"] {
+		background: #ffffff;
+		padding: 0px 0px 10px 0px;
+		width: 48%;
+		margin-right: 4%;
+		display: inline-block;
+		margin-bottom: 10px;
+		font-weight: 300;
+		border-bottom: 2px solid $border;
+	}
+
+	input[type="number"] {
+		margin-right: 0;
+	}
+}
+
+form.details {
+	display: block;
+	overflow: hidden;
+
+	#existing-enquiry-id {
+		text-transform: uppercase;
+	}
+
+	.form-half {
+		float: left;
+		width: 40%;
+		margin-right: 10%;
+	}
+
+	.form-item {
+		margin-bottom: 25px;
+
+		&.has-dropdown {
+			z-index: 2;
+		}
+	}
+
+	label, input, select {
+		display: block;
+		width: 100%;
+	}
+
+	label, .error-msg, p.label {
+		@include fontsize(8);
+		text-transform: uppercase;
+		font-weight: 600;
+		margin-bottom: 10px;
+	}
+
+	p.label {
+		cursor: pointer;
+
+		&:hover {
+			color: $primary;
+		}
+	}
+
+	input, select, textarea, input:-webkit-autofill {
+		width: 100%;
+		background: none;
+		border: 0px;
+		border-bottom: 2px solid $border;
+		padding-bottom: 10px;
+		color: $input !important;
+		font-weight: 300;
+		border-radius: 0px;
+		-webkit-appearance: none;
+		outline: none;
+		@include fontsize(14);
+		resize: none;
+		margin: 0px;
+	}
+
+	textarea {
+		height: 100px;
+	}
+
+	select {
+		background: url(/images/icon-dropdown.png) center right no-repeat;
+		background-size: 20px;
+		cursor: pointer;
+	}
+
+	input.datepicker, input.dobpicker {
+		background: url(/images/icon-calendar.png) center right no-repeat;
+		background-size: 10px;
+		cursor: pointer;
+	}
+
+	.error {
+		label, input, select, option, textarea, .error-msg { color: $primary !important; border-color: $primary; }
+
+		.error-msg {
+			position: absolute;
+			bottom: -13px;
+			margin-bottom: 0px;
+		}
+	}
+}

@@ -1,0 +1,184 @@
+body.yourquote {
+
+	.body {
+		padding-top: 42px;
+	}
+
+	.quote {
+		overflow: hidden;
+
+		p {
+			@include fontsize(12, 1.6);
+			color: $textOffset;
+		}
+
+		&__summary {
+			float: left;
+			width: 40%;
+			margin-right: 20%;
+			margin-bottom: 30px;
+
+			&__reference {
+				@include fontsize(12);
+				color: $textOffset;
+				margin-bottom: 0px;
+			}
+
+			&__startdate {
+				@include fontsize(12);
+				color: $textOffset;
+				margin-bottom: 30px;
+			}
+
+			&__item {
+				margin-bottom: 30px;
+
+				&__label {
+					@include fontsize(14);
+					color: $textOffset;
+				}
+
+				&__name {
+					@include fontsize(20);
+					font-weight: 300;
+				}
+
+				&__value {
+					@include fontsize(20);
+					font-weight: 300;
+					color: $primary;
+					float: right;
+				}
+
+				&--border {
+					border-top: 1px solid $border;
+					padding-top: 30px;
+				}
+			}
+		}
+
+		&__about-covea {
+			float: left;
+			width: 40%;
+			margin-bottom: 30px;
+
+			h2 {
+				background: url(/images/logo-covea.jpg) top right no-repeat;
+				background-size: contain;
+			}
+		}
+
+		&__rightcol {
+			float: left;
+			width: 40%;
+			margin-bottom: 30px;
+		}
+
+		&__submit {
+			float: left;
+			width: 100%;
+		}
+
+		&__premium {
+			float: left;
+			width: 100%;
+			padding-top: 50px;
+			padding-bottom: 20px;
+			border-top: 1px solid $border;
+
+			h3 {
+				margin-bottom: 30px;
+			}
+
+			&__item {
+				float: left;
+				width: 40%;
+				margin-right: 20%;
+				margin-bottom: 30px;
+
+				&:nth-of-type(2n) {
+					margin-right: 0;
+				}
+
+				&__room {
+					@include fontsize(14);
+					color: $textOffset;
+				}
+
+				&__name {
+					@include fontsize(20);
+					font-weight: 300;
+				}
+
+				&__price {
+					@include fontsize(20);
+					font-weight: 300;
+					color: $primary;
+					float: right;
+				}
+			}
+		}
+
+		&__quote {		
+			float: left;
+			border-top: 1px solid $border;
+			padding-top: 50px;
+		}
+
+		&__submit {
+			.radio {
+				float: left;
+				width: 50%;
+				cursor: pointer;
+
+				&__icon {
+					float: left;
+					width: 24px;
+					height: 24px;
+					border: 2px solid $border;
+					border-radius: 12px;
+					margin-right: 10px;
+					background: url(/images/icon-tick.png) center center no-repeat;
+					background-size: 80%;
+
+					.radio__icon.svg img {
+						fill: #ffffff;
+					}
+				}
+
+				&__label {
+					@include fontsize(12);
+					color: $textOffset;
+					line-height: 24px;
+					font-weight: 400;
+				}
+
+				&:hover {
+					.radio__icon {
+						background-color: $border;
+					}
+				}
+
+				&--active {
+
+					.radio__icon {
+						border-color: $primary;
+						background-color: $primary !important;
+						color: #ffffff;
+					}
+
+					.radio__label {
+						color: $primary;
+					}
+				}
+			}
+
+			.quote__final {
+				text-align: right;
+				font-weight: 400;
+				color: $primary;
+			}
+		}
+	}
+
+}
